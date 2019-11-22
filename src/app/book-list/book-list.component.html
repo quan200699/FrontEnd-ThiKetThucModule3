@@ -9,22 +9,22 @@
 </div>
 <div class="mt-lg-4">
   <form [formGroup]="bookForm" (ngSubmit)="updateStatus()">
-    <tr *ngFor="let book of bookList">
+    <div *ngFor="let book of bookList">
       <div *ngIf="book.read == false">
-        <td>{{book.name}}</td>
-        <td>
+        <div>{{book.name}}</div>
+        <div>
           <button>Đã đọc</button>
-        </td>
+        </div>
       </div>
-    </tr>
+    </div>
   </form>
   <form [formGroup]="bookForm" (ngSubmit)="addBook()">
-    <tr>
-      <td><input type="text" formControlName="name" class="form-control"></td>
-      <td>
+    <div>
+      <div><input type="text" formControlName="name" class="form-control"></div>
+      <div>
         <button>Thêm mới</button>
-      </td>
-    </tr>
+      </div>
+    </div>
   </form>
   <a routerLink="/list-book-read">Danh sách đã đọc</a>
 </div>

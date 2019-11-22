@@ -9,14 +9,12 @@
 </div>
 <div class="mt-lg-4">
   <form [formGroup]="bookForm" (ngSubmit)="updateStatus()">
-    <tr *ngFor="let book of bookList">
+    <div *ngFor="let book of bookList">
       <div *ngIf="book.read == true">
-        <td>{{book.name}}</td>
-        <td>
-          <button>Đọc lại</button>
-        </td>
+        {{book.name}}
+        <button>Đọc lại</button>
       </div>
-    </tr>
+    </div>
   </form>
   <a routerLink="/list-book-read">Danh sách đọc</a>
 </div>
