@@ -1,0 +1,22 @@
+<br>
+<router-outlet></router-outlet>
+<a routerLink="/">Về trang chủ</a>
+<div class="text-center text-uppercase font-weight-bold">
+  <span style="font-size: 24px">Đã đọc</span>
+</div>
+<div *ngIf="failMessage" class="alert alert-danger">
+  <p>{{failMessage}}</p>
+</div>
+<div class="mt-lg-4">
+  <form [formGroup]="bookForm" (ngSubmit)="updateStatus()">
+    <tr *ngFor="let book of bookList">
+      <div *ngIf="book.read == true">
+        <td>{{book.name}}</td>
+        <td>
+          <button>Đọc lại</button>
+        </td>
+      </div>
+    </tr>
+  </form>
+  <a routerLink="/list-book-read">Danh sách đọc</a>
+</div>
